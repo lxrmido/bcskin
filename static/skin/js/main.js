@@ -38,7 +38,11 @@ $(function(){
 			$(f).click();
 		}
 	});
-	var btnUploadSkin = ui('#btn-upload-skin');
+	var btnUploadSkin = ui('#btn-upload-skin', {
+		click : function(){
+			uploadSkinList.uploadNext();
+		}
+	});
 	var btnClearSkin = ui('#btn-clear-skin', {
 		click : function(){
 			ui.prompt({
@@ -74,6 +78,43 @@ $(function(){
 	};
 	uploadSkinList.empty = function(){
 		uploadSkinList.$.empty();
+	};
+	uploadSkinList.uploadNext = function(){
+		var $wi = uploadSkinList.$.find('.item.waiting');
+		if($wi.length){
+			G.upload('skin.upload_skin', {
+					name : $wi[0].dwName.innerHTML
+				}, $wi[0].file, 'skin_file',
+				function(e){
+					var pc = parseInt(e.loaded / e.total * 100);
+					if(pc < 100){
+						$wi[0].dwProc.innerHTML =  + '%';
+					}
+					$wi[0].dwProc.innerHTML = '处理中';
+				},
+				function(e){
+					$($wi[0]).removeClass('waiting');
+					$wi[0].dwProc.innerHTML = '上传完毕';
+					try{
+						var rs = JSON.parse(e.target.response);
+						if(rs.code == undefined){
+							$wi[0].dwProc.innerHTML = "上传出错";
+							$($wi[0]).addClass('error');
+						}else if(rs.code <= 0){
+							$wi[0].dwProc.innerHTML = rs.message;
+							$($wi[0]).addClass('error');
+						}else{
+							$($wi[0]).addClass('success');
+							setTimeout(function(){
+								uploadSkinList.uploadNext();
+							}, 10);
+						}
+					}catch(e){
+						$wi[0].dwProc.innerHTML = "上传出错";
+						$($wi[0]).addClass('error');
+					}
+				});
+		}
 	};
 	uploadSkinList.$.on('click', '.ctrl-item', function(){
 		var $p = $(this).parents('.item');

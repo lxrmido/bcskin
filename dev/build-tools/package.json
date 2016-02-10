@@ -1,0 +1,16 @@
+{
+  "name": "build-tools",
+  "version": "1.0.0",
+  "description": "GNC's build-tools",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lxrmido",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.5",
+    "gulp-csso": "^1.0.1"
+  }
+}

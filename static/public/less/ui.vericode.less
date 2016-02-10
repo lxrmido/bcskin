@@ -1,0 +1,25 @@
+@import "ui.var.less";
+
+.textbox.vericode{
+    img{
+        position:absolute;
+        width:@e-if-w;
+        height:@e-if-h;
+        right:4px;
+        top:4px;
+        background-color:#ccc;
+        cursor:pointer;
+        border:none;
+        margin:0;
+        padding:0;
+        display:block;
+        z-index:100;
+        .transition-on;
+    }
+    img:active{
+        -webkit-transform:rotateX(180deg);
+        -moz-transform:rotateX(180deg);
+        -ms-transform:rotateX(180deg);
+        transform:rotateX(180deg);
+    }
+}

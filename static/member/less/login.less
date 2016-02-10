@@ -1,0 +1,101 @@
+@import "../../public/less/ui.var.less";
+
+.login-frame{
+    width:@page-width - 2;
+    float:right;
+    min-height:500px;
+    height:auto;
+    overflow:hidden;
+    border:@border-weak;
+    background:#fff;
+    margin-top:16px;
+    
+    .margin-container{
+        width:@page-width - 2 - @content-margin * 2;
+        margin:@content-margin;
+        min-height:500px - @content-margin * 2;
+        height:auto;
+        overflow:hidden;
+        position:relative;
+    }
+}
+
+.flip-frame{
+    float:left;
+    width:700px;
+    height:500px;
+    margin:8px 0;
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    -webkit-transition:all ease-in-out 0.4s;
+    -moz-transition:all ease-in-out 0.4s;
+    -ms-transition:all ease-in-out 0.4s;
+    transition:all ease-in-out 0.4s;
+    > .flip{
+        position:absolute;
+        width:500px;
+        height:300px;
+        line-height:300px;
+        text-align:center;
+        font-size:24px;
+        color:#777;
+        left:100px;
+        bottom:60px;
+        background-color:#fff;
+        border:@border-weak;
+        box-shadow:-1px -1px 2px rgba(0, 0, 0, 0.3);
+        -webkit-transition:all ease-in-out 0.4s;
+        -moz-transition:all ease-in-out 0.4s;
+        -ms-transition:all ease-in-out 0.4s;
+        transition:all ease-in-out 0.4s;
+        > .name{
+            position:absolute;
+            left:0;
+            top:0;
+            width:500px;
+            height:300px;
+            line-height:300px;
+            text-align:center;
+            font-size:24px;
+            color:@blue-normal;
+            z-index:100;
+            > .quot{
+                font-size:36px;
+                color:#999;
+            }
+        }
+        > .pub{
+            width:auto;
+            min-width:1px;
+            overflow:hidden;
+            height:30px;
+            position:absolute;
+            top:0;
+            left:0;
+            background-color:#f7f7f7;
+            color:#777;
+            line-height:30px;
+            text-align:right;
+            padding:0 8px;
+            z-index:200;
+            font-size:15px;
+        }
+        > .loc{
+            width:auto;
+            min-width:1px;
+            overflow:hidden;
+            height:30px;
+            position:absolute;
+            bottom:0;
+            right:0;
+            background-color:#f7f7f7;
+            color:#777;
+            line-height:30px;
+            text-align:right;
+            padding:0 8px;
+            z-index:200;
+            font-size:15px;
+        }
+    }
+}

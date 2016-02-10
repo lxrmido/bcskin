@@ -1,0 +1,35 @@
+body{
+	margin:0;
+	padding:0;
+	background-color:#e0e0e0;
+}
+.reason{
+	display:none;
+}
+.error-frame{
+	width:600px;
+	height:245px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-300px;
+	margin-top:-127px;
+	background-image:url(../img/browser-problem-small.jpg);
+}
+.holder{
+	width:100%;
+	clear:both;
+	height:171px;
+}
+.link{
+	width:176px;
+	height:18px;
+	display:block;
+	clear:both;
+	margin:4px 0 0 201px;
+	border:1px #fafafa solid;
+}
+.link:hover{
+	border:1px #3aa1db solid;
+	border-left:4px #3aa1db solid;
+}

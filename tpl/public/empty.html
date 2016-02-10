@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title><{$title}></title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <{section name=file loop=$css}>
+    <link rel="stylesheet" type="text/css" href="static/<{$css[file]}>.css">
+    <{/section}>
+    <{if $COMPILE_LESS}>
+        <{section name=file loop=$less}>
+            <link rel="stylesheet" type="text/css" href="static/<{$less[file]}>.less.css" />
+        <{/section}>
+    <{else}>
+        <{section name=file loop=$less}>
+            <link rel="stylesheet/less" type="text/css" href="static/<{$less[file]}>.less" />
+        <{/section}>
+    <{/if}>
+    <{section name=file loop=$ext_css}>
+        <link rel="stylesheet" type="text/css" href="<{$ext_css[file]}>">
+    <{/section}>
+    <style type="text/css"></style>
+    <{section name=file loop=$js}>
+        <script type="text/javascript" src="static/<{$js[file]}>.js"></script>
+    <{/section}>
+    <{section name=file loop=$ext_js}>
+        <script type="text/javascript" src="<{$ext_js[file]}>"></script>
+    <{/section}>
+</head>
+<body>
+<script>
+    var _RG = <{$_RG_JSON}>;
+</script>
+<{include file="$tpl_name"}>
+</body>
+</html>

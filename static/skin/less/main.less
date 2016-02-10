@@ -1,0 +1,81 @@
+@import "../../public/less/ui.var.less";
+
+.skin-viewer{
+	width:400px;
+	height:600px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-300px;
+	margin-left:-200px - 300px;
+}
+.list-col{
+	width:600px;
+}
+.upload-skin-list{
+
+	> .item{
+		width:580px;
+		height:74px;
+		position:relative;
+		margin:8px;
+		border-bottom:2px #000 solid;
+		> .preview{
+			width:32px;
+			height:66px;
+			position:absolute;
+			left:4px;
+			top:4px;
+		}
+		> .front{
+			left:4px;
+		}
+		> .back{
+			left:4px + 32px + 4px;
+		}
+		> .name{
+			position:absolute;
+			top:20px;
+			left:4px + 32px + 4px + 32px + 8px;
+			right:4px;
+			height:24px;
+			line-height:24px;
+			font-size:15px;
+			color:#333;
+			overflow:hidden;
+		}
+		> .ctrl{
+			position:absolute;
+			right:0;
+			bottom:0;
+			height:32px;
+			width:auto;
+			min-width:1px;
+			> .ctrl-item{
+				width:24px;
+				height:24px;
+				color:#333;
+				margin:4px 0 4px 4px;
+				float:left;
+				text-align:center;
+				line-height:24px;
+				background-color:#a9a9a9;
+			}
+			> .ctrl-item:hover{
+				background-color:#a0a0a0;
+			}
+		}
+		> .proc{
+			position:absolute;
+			right:56px;
+			bottom:0;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:32px;
+			line-height:32px;
+			color:#555;
+			font-size:14px;
+		}
+	}
+}

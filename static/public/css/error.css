@@ -1,0 +1,63 @@
+body{
+	margin:0;
+	padding:0;
+	background-color:#e0e0e0;
+}
+
+.error-frame{
+	width:600px;
+	height:245px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-300px;
+	margin-top:-127px;
+	background-image:url(../img/error-small.png);
+	-webkit-background-image:url(../img/error.png);
+	-moz-background-image:url(../img/error.png);
+	-webkit-background-size:600px 245px;
+	-moz-background-size:600px 245px;
+}
+.msg-frame{
+	position:absolute;
+	width:377px;
+	height:181px;
+	top:22px;
+	left:196px;
+	z-index:200;
+	overflow-y:scroll;
+	color:#333;
+	line-height:20px;
+}
+.error-bottom{
+	position:absolute;
+	width:377px;
+	height:20px;
+	bottom:22px;
+	left:196px;
+	z-index:200;
+	color:#333;
+	line-height:20px;
+}
+.link{
+	float:right;
+	display:block;
+	height:20px;
+	line-height:20px;
+	width:auto;
+	min-width:1px;
+	margin:0;
+	text-indent:center;
+	overflow:hidden;
+	color:#111;
+	padding:0 8px;
+	font-size:15px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.link:visited{
+	color:#111;
+}
+.link.a{
+	border-left:2px #aaa solid;
+}

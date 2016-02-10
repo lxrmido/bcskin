@@ -1,0 +1,117 @@
+<div class="col x7 center">
+	<div class="row x2"></div>
+	<div class="row">
+		<div class="col all visi" id="setting-frame">
+			<div class="row x1"></div>
+			<div class="tab-bar" id="setting-tab">
+				<div class="tab selected" key="base">
+					基本信息
+				</div>
+				<div class="tab" key="safe">
+					安全设置
+				</div>
+			</div>
+
+			<div class="view" id="view-base">
+				<div class="col center">
+					<div class="row x1"></div>					
+					<div class="row x1">
+						<div class="label margin-left">
+							UID
+						</div>
+						<div class="label free">
+							<{$user_info['id']}>
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							用户名
+						</div>
+						<div class="label free">
+							<{$user_info['username']}>
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="textbox margin-left" id="email">
+							<div class="label">
+								邮箱
+							</div>
+							<input type="text" value="<{$user_info['email']}>">
+						</div>
+						<div class="bc-button margin-left" id="save-email">
+							<span>保存修改</span>
+						</div>
+					</div>
+					<div class="tip single-line margin-left" id="tip-email">
+						
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							用户组
+						</div>
+						<div class="label free">
+							<{$user_info['group_name']}>
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							注册时间
+						</div>
+						<div class="label free">
+							<{$user_info['regdate']|date_format:"%Y-%m-%d %H:%I:%S"}>
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							登录时间
+						</div>
+						<div class="label free">
+							<{$user_info['lastlogin']|date_format:"%Y-%m-%d %H:%I:%S"}>
+						</div>
+					</div>
+	                <div class="hor-split margin-top"></div>
+					<div class="row x1"></div>
+				</div>
+			</div>
+
+			<div class="view" id="view-safe">
+				<div class="col center">
+					<div class="row x1"></div>
+					<div class="row x1">
+	                    <div class="textbox margin-left" id="password">
+	                        <div class="label">新密码</div>
+	                        <input type="password" />
+	                    </div>
+	                </div> 
+	                <div class="tip single-line margin-left" id="tip-password"></div>
+	                <div class="row x1">
+	                    <div class="textbox margin-left" id="password-confirm">
+	                        <div class="label">密码确认</div>
+	                        <input type="password" />
+	                    </div>
+	                </div>
+	                <div class="tip single-line margin-left" id="tip-password-confirm"></div>
+	                <div class="row x1">
+	                    <div class="vericode textbox margin-left" id="password-vericode">
+	                        <div class="label">验证码</div>
+	                        <img></img>
+	                        <input type="text" />
+	                    </div>  
+	                </div>
+	                <div class="row x1">
+	                    <div class="textbox margin-left" id="old-password">
+	                        <div class="label">原密码</div>
+	                        <input type="password" />
+	                    </div>
+	                    <div class="bc-button right margin-right" id="save-password">
+	                    	<span>保存修改</span>
+	                    </div>
+	                </div>
+	                <div class="tip single-line margin-left" id="tip-password-save"></div>
+	                <div class="hor-split margin-top"></div>
+	                <div class="row x1"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

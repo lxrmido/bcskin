@@ -1,0 +1,26 @@
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type='text/javascript'>
+	window.URL_ROOT = "<{$url_root}>";
+</script>
+<{section name=file loop=$css}>
+    <link rel="stylesheet" type="text/css" href="<{$url_static}><{$css[file]}>.css?v=<{$static_version}>">
+<{/section}>
+<{if $COMPILE_LESS}>
+	<{section name=file loop=$less}>
+	    <link rel="stylesheet" type="text/css" href="<{$url_static}><{$less[file]}>.css?v=<{$static_version}>" />
+	<{/section}>
+<{else}>
+	<{section name=file loop=$less}>
+	    <link rel="stylesheet/less" type="text/css" href="<{$url_static}>/<{$less[file]}>.less?v=<{$static_version}>" />
+	<{/section}>
+<{/if}>
+<{section name=file loop=$ext_css}>
+    <link rel="stylesheet" type="text/css" href="<{$ext_css[file]}>?v=<{$static_version}>">
+<{/section}>
+<style type="text/css"></style>
+<{section name=file loop=$js}>
+    <script type="text/javascript" src="<{$url_static}><{$js[file]}>.js?v=<{$static_version}>"></script>
+<{/section}>
+<{section name=file loop=$ext_js}>
+    <script type="text/javascript" src="<{$ext_js[file]}>"></script>
+<{/section}>

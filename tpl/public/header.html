@@ -1,0 +1,24 @@
+<div class="header" id="header">
+    <div class="center">
+        <a class="trade-mark" href="./"><{$title}></a>
+        <{foreach from=$navi key=k item=i}>
+            <a href="<{$i[1]}>" class="navi"><{$i[0]}></a>
+        <{/foreach}>
+        <div class="user" id="header-user">
+            <div class="username" data-node="dwUsername"></div>
+            <a class="unavi admin" data-node="dwSetting" href="./?c=admin">
+                <i class="icon-cogs"></i>
+                <span>管理</span>
+            </a>
+            <a class="unavi" data-node="dwSetting" href="./?c=member&a=setting">
+                <i class="icon-cog"></i>
+            </a>
+            <a class="unavi" data-node="dwLogout" href="./?c=member&a=logout">
+                <i class="icon-signout"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="notify-area" id="notify-area">
+    
+</div>

@@ -5,10 +5,11 @@
 @header-tm-back:#111;
 @header-us-back:#333;
 
-@ph-height:160px;
+@ph-height:138px;
 @ph-top:(@ph-height - 100px) / 2;
 
 @page-width:980px;
+@page-width-wd:1200px;
 @page-margin:0 auto;
 
 @border-weak-color:#d7d7d7;
@@ -72,13 +73,22 @@
 @bc-f-back-color:#c6c6c6;
 @bc-h-back-color:#8b8b8b;
 @bc-btn-color-hover:#bdbfff;
+@bc-btn-color-hover-dark:rgb(147,148,179);
 @bc-btn-color-active:#6366a2;
 @bc-text-color-hover:#fdff9b;
+@bc-text-border-color:#a0a0a0;
+@bc-text-color:#e0e0e0;
 
 .bc-box-shadow-f{
     box-shadow:
-        inset 1px 1px 2px 0 rgba(255, 255, 255, .5),
-        inset -1px -1px 2px 0 rgba(0, 0, 0, .8);
+        inset 1px 1px 1px 0 rgba(255, 255, 255, .5),
+        inset -1px -1px 1px 0 rgba(0, 0, 0, .8);
+}
+
+.bc-box-shadow-b{
+    box-shadow:
+        inset 1px 1px 1px 0 rgba(255, 255, 255, .8),
+        inset -1px -1px 1px 0 rgba(0, 0, 0, .8);
 }
 
 .scale-fade-0{

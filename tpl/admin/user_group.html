@@ -1,0 +1,90 @@
+<div class="row x1">
+	<div class="button right with-icon" id="group-add">
+		<span>添加</span>
+		<i class="icon-plus"></i>
+	</div>
+	<div class="button right with-icon margin-right" id="group-refresh">
+		<i class="icon-refresh"></i>
+		<span>刷新</span>
+	</div>
+</div>
+<div class="row">
+	<div class="col visi all">
+		<div class="group-list" id="group-list">
+		
+		</div>
+		<div class="priv-list" id="priv-list" style="display:none">
+			<div class="inner" data-node="dwInner">
+			    <div class="row x1">
+					<div class="priv-k-holder"></div>
+					<div class="priv-k-module">模块</div>
+					<div class="priv-k-key">页面</div>
+					<div class="priv-k-name">说明</div>
+				</div>
+				<div class="hor-split"></div>
+				<{section name=p loop=$priv_list_action}>
+			    <div class="row x1 <{cycle values="row-a,row-b"}> priv-item" data-node="dwPM<{$priv_list_action[p]['module']}>A<{$priv_list_action[p]['action']}>">
+			    	<div class="priv-k-holder"></div>
+					<div class="priv-k-module" data-node="dwM"><{$priv_list_action[p]['module']}></div>
+					<div class="priv-k-key" data-node="dwKa"><{$priv_list_action[p]['action']}></div>
+					<div class="priv-k-name" data-node="dwN"><{$priv_list_action[p]['name']}></div>
+					<div class="toggle" data-node="dwT"></div>
+					<div class="label free margin-left" data-node="dwE">（继承）</div>
+			    </div>
+			    <{/section}>
+			    
+			    <div class="hor-split"></div>
+
+			    <div class="row x1">
+					<div class="priv-k-holder"></div>
+					<div class="priv-k-module">模块</div>
+					<div class="priv-k-key">操作</div>
+					<div class="priv-k-name">说明</div>
+				</div>
+				<div class="hor-split"></div>
+				<{section name=p loop=$priv_list_method}>
+			    <div class="row x1 <{cycle values="row-a,row-b"}> priv-item" data-node="dwPM<{$priv_list_method[p]['module']}>A<{$priv_list_method[p]['method']}>">
+			    	<div class="priv-k-holder"></div>
+					<div class="priv-k-module" data-node="dwM"><{$priv_list_method[p]['module']}></div>
+					<div class="priv-k-key" data-node="dwKm"><{$priv_list_method[p]['method']}></div>
+					<div class="priv-k-name" data-node="dwN"><{$priv_list_method[p]['name']}></div>
+					<div class="toggle" data-node="dwT"></div>
+					<div class="label free margin-left" data-node="dwE">（继承）</div>
+			    </div>
+			    <{/section}>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row x3">
+	
+</div>
+
+<div class="tpl" id="tpl">
+	<div class="group-item" data-node="dwGroupItem">
+		<div class="layer-holder x" data-node="dwLayerHolder"></div>
+		<div class="layer-icon" data-node="dwLayerIcon"></div>
+		<div class="name" data-node="dwName"></div>
+		<div class="list-ctrl">
+			<div class="ctrl-item ft" data-action="remove" data-flex="删除">
+				<i class="icon-trash"></i>
+				<div class="expand">
+					<div class="exp red confirm-del">确认删除</div>
+					<div class="exp cancel-del">取消</div>
+				</div>
+			</div>
+			<div class="ctrl-item ft" data-action="config" data-flex="权限管理">
+				<i class="icon-cog"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="move" data-flex="移动">
+				<i class="icon-exchange"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="edit" data-flex="名称修改">
+				<i class="icon-edit"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="add" data-flex="添加子用户组">
+				<i class="icon-plus"></i>
+			</div>
+		</div>
+	</div>
+</div>

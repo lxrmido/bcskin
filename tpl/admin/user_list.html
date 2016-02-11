@@ -1,0 +1,178 @@
+<div class="row">
+	<div class="tab-bar" id="list-tab">
+		<div class="tab selected" key="group">分组查看</div>
+		<div class="tab" key="find">查找筛选</div>
+	</div>
+	<div class="col visi all">
+		<div class="view" id="view-group">
+			<div class="row x1">
+				<div class="button right margin-right with-icon" id="btn-add-user">
+					<span>添加用户</span>
+					<i class="icon-plus"></i>
+				</div>
+			</div>
+			<div class="user-add-frame" id="user-add-frame" style="display:none;">
+				<div class="in">
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-add-user-name">
+							<div class="label">
+								用户名
+							</div>
+							<input type="text">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-add-user-email">
+							<div class="label">
+								邮箱
+							</div>
+							<input type="text">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-add-user-password">
+							<div class="label">
+								密码
+							</div>
+							<input type="password">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="tip single-line margin-left slim" id="tip-add-user"></div>
+						<div class="button right margin-right green" id="btn-add-user-add">
+							<span>添加</span>
+						</div>
+						<div class="button right margin-right" id="btn-add-user-fold">
+							<span>收起</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="user-edit-frame" id="user-edit-frame" style="display:none;">
+				<div class="in">
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-edit-user-name">
+							<div class="label">
+								用户名
+							</div>
+							<input type="text">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-edit-user-email">
+							<div class="label">
+								邮箱
+							</div>
+							<input type="text">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="textbox margin-left" id="input-edit-user-password">
+							<div class="label">
+								密码
+							</div>
+							<input type="password">
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							注册时间
+						</div>
+						<div class="label free margin-left" id="label-edit-user-regdate">
+							
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="label margin-left">
+							最后登陆
+						</div>
+						<div class="label free margin-left" id="label-edit-user-lastlogin">
+							
+						</div>
+					</div>
+					<div class="row x1">
+						<div class="tip single-line margin-left slim" id="tip-edit-user"></div>
+						<div class="button right margin-right green" id="btn-edit-user-save">
+							<span>保存</span>
+						</div>
+						<div class="button right margin-right" id="btn-edit-user-fold">
+							<span>收起</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="group-list">
+					<div class="hd">
+						用户组
+					</div>
+					<div class="list" id="group-list">
+						
+					</div>
+				</div>
+				<div class="user-list">
+					<div class="list-hd">
+						<div class="u-k uid">UID</div>
+						<div class="u-k name">用户名</div>
+						<div class="u-k group">用户组</div>
+					</div>
+					<div class="list" id="user-list">
+						 
+					</div>
+				</div>
+				<div class="row x1">
+					<div class="simple-pages" id="user-pages"></div>
+				</div>
+			</div>
+		</div>
+		<div class="view" id="view-find">
+			<div class="button margin-right right with-icon blue slim" id="btn-user-search">
+				<i class="icon-search"></i>
+			</div>
+			<input type="text" class="input margin-right right x2 slim" id="user-find-kw" placeholder="用户名/邮箱/UID" />
+			<div class="user-list all">
+				<div class="list-hd">
+					<div class="u-k uid">UID</div>
+					<div class="u-k name">用户名</div>
+					<div class="u-k group">用户组</div>
+				</div>
+				<div class="list" id="user-list-find">
+					 
+				</div>
+			</div>
+			<div class="row x1">
+				<div class="simple-pages" id="user-pages-find"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tpl" id="tpl">
+	<div class="item" data-node="dwGroupItem">
+		<div class="holder" data-node="dwHolder"></div>
+		<div class="layer-icon" data-node="dwIcon"></div>
+		<div class="text" data-node="dwName"></div>
+	</div>
+	<div class="item" data-node="dwUserItem">
+		<div class="u-k uid" data-node="dwId"></div>
+		<div class="u-k name" data-node="dwName"></div>
+		<div class="u-k group" data-node="dwGroup"></div>
+		<div class="u-k ctrl" data-node="dwCtrl">
+			<div class="ctrl-item ft" data-flex="编辑" data-action="edit">
+				<i class="icon-edit"></i>
+			</div>
+			<div class="ctrl-item ft" data-flex="变更用户组" data-action="group">
+				<i class="icon-exchange"></i>
+			</div>
+			<div class="ctrl-item ft" data-flex="封禁用户" data-action="ban" data-node="dwBan">
+				<i class="icon-ban-circle"></i>
+			</div>
+			<div class="ctrl-item ft" data-flex="删除" data-action="remove">
+				<i class="icon-trash"></i>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var _groups = <{$groups_json}>;
+</script>

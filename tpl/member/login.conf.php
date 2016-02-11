@@ -16,6 +16,7 @@ class config_tpl_member_login{
                 'member/less/login'
             ),
             'js'  => array(
+                'public/js/md5',
                 'public/js/ui.vericode',
                 'member/js/login'
             )

@@ -1,0 +1,145 @@
+@import "../../public/less/ui.var.less";
+
+.group-item{
+	width:906px;
+	height:auto;
+	min-height:1px;
+	overflow:hidden;
+	border-top:@border-weak;
+	position:relative;
+	margin:0 auto;
+
+	> .layer-holder{
+		float:left;
+		width:1px;
+		height:50px;
+		margin:0 24px;
+	}
+	> .layer-holder.x1{
+		display:none;
+	}
+	> .layer-holder.x2{
+		display:block;
+	}
+	> .layer-holder.x3{
+		display:block;
+		margin-left:24px + 50px;
+	}
+	> .layer-holder.x4{
+		display:block;
+		margin-left:24px + 50px * 2;
+	}
+	> .layer-holder.x5{
+		display:block;
+		margin-left:24px + 50px * 3;
+	}
+	> .layer-holder.x6{
+		display:block;
+		margin-left:24px + 50px * 4;
+	}
+	> .layer-holder.x7{
+		display:block;
+		margin-left:24px + 50px * 5;
+	}
+	> .layer-holder.x8{
+		display:block;
+		margin-left:24px + 50px * 6;
+	}
+
+	> .layer-icon{
+		font-family:'FontAwesome';
+		float:left;
+		width:40px;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		font-size:18px;
+		margin:5px;
+	}
+	> .layer-icon::after{
+		content:"\f0c0";
+		color:#333;
+	}
+	> .layer-icon.expand::after{
+		content:"\f0d7";
+		color:#777;
+	}
+	> .name{
+		float:left;
+		width:120px;
+		height:50px;
+		line-height:50px;
+		text-align:left;
+		font-size:@font-m;
+		color:#333;
+		text-indent:8px;
+	}
+	> .list-ctrl{
+		display:none;
+	}
+
+}
+.group-item:first-child{
+	border-top:none;
+}
+.group-item:hover{
+	> .list-ctrl{
+		display:block;
+	}
+}
+.priv-list{
+	width:100%;
+	height:auto;
+	min-height:1px;
+	overflow:hidden;
+	background-color:#e3e3e3;
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.3);
+	position:relative;
+	> .inner{
+		width:906px;
+		margin:0 auto 8px auto;
+		height:auto;
+		min-height:56px;
+		overflow:hidden;
+		background-color:#fff;
+		border:@border-weak;
+		border-top:none;
+		box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.3);
+		border-radius:3px;
+		position:relative;
+	}
+}
+.priv-k-holder{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	color:#333;
+	font-size:@font-m;
+	text-align:left;
+	text-indent:8px;
+	overflow:hidden;	
+	float:left;
+	margin:12px;
+	// background-color:@back-weak;
+}
+.priv-k-module,
+.priv-k-key,
+.priv-k-name{
+	width:200px;
+	height:56px;
+	border-right:@border-weak;
+	line-height:56px;
+	color:#333;
+	font-size:@font-m;
+	text-align:left;
+	text-indent:8px;
+	overflow:hidden;	
+	float:left;
+	margin:0 0;
+}
+.row-b{
+	background-color:#fff;
+}
+.row-b{
+	background-color:#f9f9f9;
+}

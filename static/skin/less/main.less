@@ -86,11 +86,300 @@
 	> .item.error{
 		> .proc{
 			color:@red-normal;
+			text-shadow:1px 1px 1px rgba(0, 0, 0, .8);
+		}
+		> .ctrl{
+			display:block;
 		}
 	}
 	> .item.success{
 		> .proc{
 			color:@green-normal;
+			text-shadow:1px 1px 1px rgba(0, 0, 0, .8);
 		}
 	}
+}
+.upload-cape-list{
+	> .item{
+		width:580px;
+		height:74px;
+		position:relative;
+		margin:8px;
+		border-bottom:2px #000 solid;
+		> .preview{
+			width:80px;
+			height:62px;
+			position:absolute;
+			left:4px;
+			top:6px;
+			display:block;
+			border:none;
+			margin:0;
+		}
+		> .name{
+			position:absolute;
+			top:20px;
+			left:4px + 80px + 8px;
+			right:4px;
+			height:24px;
+			line-height:24px;
+			font-size:15px;
+			color:#333;
+			overflow:hidden;
+		}
+		> .ctrl{
+			position:absolute;
+			right:0;
+			bottom:0;
+			height:32px;
+			width:auto;
+			min-width:1px;
+			display:none;
+			> .ctrl-item{
+				width:24px;
+				height:24px;
+				color:#333;
+				margin:4px 0 4px 4px;
+				float:left;
+				text-align:center;
+				line-height:24px;
+				background-color:#a9a9a9;
+			}
+			> .ctrl-item:hover{
+				background-color:#a0a0a0;
+			}
+		}
+		> .proc{
+			position:absolute;
+			right:56px;
+			bottom:0;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:32px;
+			line-height:32px;
+			color:#555;
+			font-size:14px;
+		}
+	}
+	> .item.waiting{
+		> .ctrl{
+			display:block;
+		}
+	}
+	> .item.error{
+		> .proc{
+			color:@red-normal;
+			text-shadow:1px 1px 1px rgba(0, 0, 0, .8);
+		}
+		> .ctrl{
+			display:block;
+		}
+	}
+	> .item.success{
+		> .proc{
+			color:@green-normal;
+			text-shadow:1px 1px 1px rgba(0, 0, 0, .8);
+		}
+	}
+}
+.list-check{
+	width:12px;
+	height:12px;
+	border:2px #000 solid;
+	background-color:#fff;
+	line-height:12px;
+	text-align:center;
+	font-size:12px;
+	margin:20px 2px 20px 10px;
+	float:left;
+	color:#fff;
+}
+.list-check.checked{
+	color:#000;
+}
+.myskin-list{
+	min-height:500px;
+	> .item{
+		width:580px;
+		height:74px;
+		position:relative;
+		margin:8px;
+		border-bottom:2px #000 solid;
+		> .use{
+			position:absolute;
+			margin:0;
+			right:0;
+			top:0;
+		}
+		> .check{
+			position:absolute;
+			width:12px;
+			height:12px;
+			border:2px #000 solid;
+			left:2px;
+			top:8px;
+			background-color:#fff;
+			line-height:12px;
+			text-align:center;
+			font-size:12px;
+			color:#fff;
+		}
+		> .preview{
+			width:32px;
+			height:66px;
+			position:absolute;
+			left:4px;
+			top:4px;
+		}
+		> .front{
+			left:26px + 4px;
+		}
+		> .back{
+			left:26px + 4px + 32px + 4px;
+		}
+		> .name{
+			position:absolute;
+			top:20px;
+			left:26px + 4px + 32px + 4px + 32px + 8px;
+			right:4px;
+			height:24px;
+			line-height:24px;
+			font-size:15px;
+			color:#333;
+			overflow:hidden;
+		}
+		> .ctrl{
+			position:absolute;
+			right:0;
+			bottom:0;
+			height:32px;
+			width:auto;
+			min-width:1px;
+			> .ctrl-item{
+				width:24px;
+				height:24px;
+				color:#333;
+				margin:4px 0 4px 4px;
+				float:left;
+				text-align:center;
+				line-height:24px;
+				background-color:#a9a9a9;
+			}
+			> .ctrl-item:hover{
+				background-color:#a0a0a0;
+			}
+		}
+		> .proc{
+			position:absolute;
+			right:56px;
+			bottom:0;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:32px;
+			line-height:32px;
+			color:#555;
+			font-size:14px;
+		}
+	}
+	> .item.checked{
+		> .check{
+			color:#000;
+		}
+	}
+}
+.mycape-list{
+	min-height:500px;
+	> .item{
+		width:580px;
+		height:74px;
+		position:relative;
+		margin:8px;
+		border-bottom:2px #000 solid;
+		> .use{
+			position:absolute;
+			margin:0;
+			right:0;
+			top:0;
+		}
+		> .check{
+			position:absolute;
+			width:12px;
+			height:12px;
+			border:2px #000 solid;
+			left:2px;
+			top:8px;
+			background-color:#fff;
+			line-height:12px;
+			text-align:center;
+			font-size:12px;
+			color:#fff;
+		}
+		> .preview{
+			display:block;
+			border:none;
+			margin:0;
+			width:80px;
+			height:62px;
+			position:absolute;
+			left:26px + 4px;
+			top:6px;
+		}
+		> .name{
+			position:absolute;
+			top:20px;
+			left:26px + 4px + 80px + 8px;
+			right:4px;
+			height:24px;
+			line-height:24px;
+			font-size:15px;
+			color:#333;
+			overflow:hidden;
+		}
+		> .ctrl{
+			position:absolute;
+			right:0;
+			bottom:0;
+			height:32px;
+			width:auto;
+			min-width:1px;
+			> .ctrl-item{
+				width:24px;
+				height:24px;
+				color:#333;
+				margin:4px 0 4px 4px;
+				float:left;
+				text-align:center;
+				line-height:24px;
+				background-color:#a9a9a9;
+			}
+			> .ctrl-item:hover{
+				background-color:#a0a0a0;
+			}
+		}
+		> .proc{
+			position:absolute;
+			right:56px;
+			bottom:0;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:32px;
+			line-height:32px;
+			color:#555;
+			font-size:14px;
+		}
+	}
+	> .item.checked{
+		> .check{
+			color:#000;
+		}
+	}
+}
+.current-preview{
+	width:64px;
+	height:132px;
+	margin:8px;
+	float:right;
 }

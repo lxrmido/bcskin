@@ -397,7 +397,7 @@ class User{
      * @return string      
      */
     public static function make_pass($raw, $salt){
-        return md5(md5($raw).$salt);
+        return md5(md5(md5($raw).$salt).MD5_SALT);
     }
 
     /**

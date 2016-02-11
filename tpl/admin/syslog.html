@@ -1,0 +1,68 @@
+<div class="col all visi">
+	<div class="row x1">
+		
+	</div>
+	<div class="view" id="view-list">
+		<div class="row x1">
+			<div class="tab-bar" id="tab-main">
+				<div class="tab selected" key="dbg">
+					<i class="icon-code" style="color:#16A085;"></i>
+					<span>调试</span>
+				</div>
+				<div class="tab" key="err">
+					<i class="icon-exclamation-sign" style="color:#F39C12;"></i>
+					<span>报错</span>
+				</div>
+				<div class="tab" key="dgr">
+					<i class="icon-warning-sign" style="color:#C0392B;"></i>
+					<span>警报</span>
+				</div>
+				<div class="tab" key="tml">
+					<i class="icon-time" style="color:#34495E;"></i>
+					<span>时间</span>
+				</div>
+			</div>
+		</div>
+		<div class="view" id="view-dbg-list">
+			
+		</div>
+		<div class="view" id="view-err-list">
+			
+		</div>
+		<div class="view" id="view-dgr-list">
+			
+		</div>
+		<div class="view" id="view-tml-list">
+			
+		</div>
+	</div>
+	<div class="view" id="view-view">
+		<div class="hor-split"></div>
+		<div class="row x1">
+			<div class="button with-icon margin-left" id="btn-view-back">
+				<i class="icon-chevron-left"></i>
+				<span>返回列表</span>
+			</div>
+			<div class="label free margin-right right" id="lbl-file-name">
+				<span data-node="dwText">...</span>
+			</div>
+		</div>
+		<div class="hor-split-margin"></div>
+		<div class="row x10">
+			<div class="auto-text-out">
+				<div class="in">
+					<div class="logarea" id="text-content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tpl" id="tpl">
+	<div class="list-item" data-node="dwListItem">
+		<i class="icon-time"></i>
+		<span data-node="dwText"></span>
+	</div>
+</div>
+<script>
+	var _log_files = <{$log_files_json}>;
+</script>

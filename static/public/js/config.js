@@ -47,9 +47,6 @@ var C = {
         }
         return s + ' ' + f(et.getHours()) + ':' + f(et.getMinutes()) + (withsec ? (":" + f(et.getSeconds())) : "");
     },
-    UEditorURL : function(){
-        return C.basePath() + '/static/ueditor/';
-    },
     defaultSkin : function(){
         return C.staticPath() + '/skin/img/char.png';
     }

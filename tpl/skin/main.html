@@ -1,4 +1,3 @@
-<div class="head-place-holder"></div>
 <div class="page-section">
 	<div class="col half left">
 		<div class="row"></div>
@@ -25,7 +24,10 @@
 		</div>
 		<div class="col all visi">
 			<div class="view" id="view-current">
-				<div class="row x1"></div>
+				<div class="row">
+					<div class="current-preview back" id="current-skin-back"></div>
+					<div class="current-preview front" id="current-skin-front"></div>
+				</div>
 				<div class="row x1">
 					<div class="label margin-left">
 						皮肤名称：
@@ -71,13 +73,39 @@
 			</div>
 			<div class="view" id="view-myskin">
 				<div class="row x1">
+					<div class="list-check" id="check-myskin">
+						<i class="icon-ok"></i>
+					</div>
+					<div class="label free">
+						批量操作：
+					</div>
+					<div class="button with-icon margin-left slim" id="rm-all-myskin">
+						<span>删除</span>
+					</div>
+				</div>
+				<div class="hor-split-margin"></div>
+				<div class="row myskin-list" id="myskin-list">
 					
 				</div>
+				<div class="simple-pages" id="sp-myskin"></div>
 			</div>
 			<div class="view" id="view-mycape">
 				<div class="row x1">
+					<div class="list-check" id="check-mycape">
+						<i class="icon-ok"></i>
+					</div>
+					<div class="label free">
+						批量操作：
+					</div>
+					<div class="button with-icon margin-left slim" id="rm-all-mycape">
+						<span>删除</span>
+					</div>
+				</div>
+				<div class="hor-split-margin"></div>
+				<div class="row mycape-list" id="mycape-list">
 					
 				</div>
+				<div class="simple-pages" id="sp-mycape"></div>
 			</div>
 			<div class="view" id="view-upload-skin">
 				<div class="row upload-skin-list" id="upload-skin-list">
@@ -96,11 +124,28 @@
 				</div>
 			</div>
 			<div class="view" id="view-upload-cape">
-				
+				<div class="row upload-cape-list" id="upload-cape-list">
+					
+				</div>
+				<div class="row x1">
+					<div class="bc-button right margin-right" id="btn-upload-cape">
+						<span>开始上传</span>
+					</div>
+					<div class="bc-button right margin-right" id="btn-add-cape">
+						<span>添加文件</span>
+					</div>
+					<div class="bc-button right margin-right" id="btn-clear-cape">
+						<span>清空队列</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	var _current_skin = <{$current_skin_json}>;
+	var _current_cape = <{$current_cape_json}>;
+</script>
 <div class="tpl" id="tpl">
 	<div class="item waiting" data-node="dwUploadSkinListItem">
 		<div class="preview front" data-node="dwFront"></div>
@@ -116,6 +161,64 @@
 		</div>
 		<div class="proc" data-node="dwProc">
 			等待上传
+		</div>
+	</div>
+	<div class="item waiting" data-node="dwUploadCapeListItem">
+		<img class="preview" data-node="dwPreview">
+		<div class="name" data-node="dwName">名称</div>
+		<div class="ctrl">
+			<div class="ctrl-item ft" data-action="edit" data-flex="修改名称">
+				<i class="icon-edit"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="remove" data-flex="删除">
+				<i class="icon-trash"></i>
+			</div>
+		</div>
+		<div class="proc" data-node="dwProc">
+			等待上传
+		</div>
+	</div>
+	<div class="item" data-node="dwMySkinListItem">
+		<div class="check">
+			<i class="icon-ok"></i>
+		</div>
+		<div class="preview front" data-node="dwFront"></div>
+		<div class="preview back" data-node="dwBack"></div>
+		<div class="name" data-node="dwName">皮肤名称</div>
+		<div class="ctrl">
+			<div class="ctrl-item ft" data-action="preview" data-flex="预览">
+				<i class="icon-eye-open"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="edit" data-flex="修改名称">
+				<i class="icon-edit"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="remove" data-flex="删除">
+				<i class="icon-trash"></i>
+			</div>
+		</div>
+		<div class="button slim use">
+			<span>使用</span>
+		</div>
+	</div>
+	<div class="item" data-node="dwMyCapeListItem">
+		<div class="check">
+			<i class="icon-ok"></i>
+		</div>
+		<img class="preview" data-node="dwPreview">
+		<div class="name" data-node="dwName">皮肤名称</div>
+		<div class="ctrl">
+			<div class="ctrl-item ft" data-action="preview" data-flex="预览">
+				<i class="icon-eye-open"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="edit" data-flex="修改名称">
+				<i class="icon-edit"></i>
+			</div>
+			<div class="ctrl-item ft" data-action="remove" data-flex="删除">
+				<i class="icon-trash"></i>
+			</div>
+		</div>
+		<div class="button slim use">
+			<span>使用</span>
 		</div>
 	</div>
 </div>

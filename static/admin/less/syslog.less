@@ -1,0 +1,52 @@
+@import "../../public/less/ui.var.less";
+
+.logarea{
+    margin:0;
+    padding:0;
+    border:none;
+    resize:none;
+    width:100%;
+    height:100%;
+    outline:none;
+    overflow-y:auto;
+    overflow-x:hidden;
+    font-size:@font-m;
+    > p{
+    	margin:0;
+    	line-height:20px;
+    	padding:0 4px;
+    	width:840px;
+    	overflow:hidden;
+    	height:auto;
+    	min-height:20px;
+    	word-break:break-all;
+    }
+    > textarea{
+        margin:0 0 0 80px;
+        line-height:20px;
+        padding:0 4px;
+        width:758px;
+        overflow:hidden;
+        height:80px;
+        font-size:14px;
+        border:@border-weak;
+    }
+    > .error-type{
+    	margin-top:20px;
+    	background-color:@red-back;
+    	color:@red-normal;
+    }
+    > .type{
+    	margin-top:20px;
+    	background-color:@green-back;
+    	color:@green-normal;
+    }
+    > .time{
+    	background-color:@blue-back;
+    	color:@blue-normal;
+    }
+	> .other{
+		padding-left:100px;
+    	width:740px;
+	}
+}

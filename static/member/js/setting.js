@@ -58,8 +58,8 @@ $(function(){
 		click : function(){
 			if(passwordVericode.check() && password.check() && passwordConfirm.check() && oldPassword.check()){
 				G.method('member.edit_password', {
-					new_pass : password.val(),
-					old_pass : oldPassword.val(),
+					new_pass : MD5(password.val()),
+					old_pass : MD5(oldPassword.val()),
 					vericode : passwordVericode.val()
 				}, function(c, d){
 					oldPassword.tip.ok('修改已保存');

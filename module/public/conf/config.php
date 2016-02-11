@@ -33,6 +33,7 @@ define('RUNTIME_METHOD_NOTFOUND', RUNTIME_DIR_MODULE . 'public/method/notfound.p
 
 define('WEBSITE_URL_ROOT',  'http://l/bcskin');
 define('WEBSITE_URL_DATA', WEBSITE_URL_ROOT . '/' . RUNTIME_DIR_DATA);
+define('POWERED_BY', 'Powered by bilicraft');
 
 define('COMPILE_LESS', true);
 define('MARVIN_DEBUG', false);

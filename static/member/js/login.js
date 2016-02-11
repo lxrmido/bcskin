@@ -95,7 +95,7 @@ $(function(){
         ){
             G.method('member.login', {
                 account  : lgAccount.val(),
-                password : lgPassword.val(),
+                password : MD5(lgPassword.val()),
                 code     : lgVericode.val(),
                 keep     : lgKeep.val() ? 1 : 0
             }, function(){
@@ -117,7 +117,7 @@ $(function(){
         ){
             G.method('member.register', {
                 username : rgAccount.val(),
-                password : rgPassword.val(),
+                password : MD5(rgPassword.val()),
                 email    : rgEmail.val(),
                 code     : rgVericode.val()
             }, function(c, d){

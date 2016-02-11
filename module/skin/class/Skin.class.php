@@ -26,6 +26,32 @@ class Skin{
 		}
 	}
 
+	public static function list_mine($offset, $limit){
+		$uid = User::$last['id'];
+		return DB::all("SELECT * FROM `res_skin` WHERE `uid`='$uid' ORDER BY `id` DESC LIMIT $offset, $limit");
+	}
+
+	public static function count_mine(){
+		$uid = User::$last['id'];
+		$r   = DB::one("SELECT COUNT(`id`) FROM `res_skin` WHERE `uid`='$uid'");
+		if(empty($r)){
+			return 0;
+		}
+		return intval($r);
+	}
+
+	public static function remove_mine($ids){
+		$uid = User::$last['id'];
+		return DB::query("DELETE FROM `res_skin` WHERE `id` IN ($ids) AND `uid`='$uid'");
+	}
+
+	public static function rename_mine($name, $id){
+		$uid = User::$last['id'];
+		return DB::update([
+			'name' => $name
+		], 'res_skin', "`id`='$id' AND `uid`='$uid'");
+	}
+
 	/**
 	 * upload skin image file
 	 * @param  string $key  form-key
@@ -47,7 +73,8 @@ class Skin{
 		$time = time();
 		$uid  = User::$last['id'];
 		$data = [
-			'uid'    => $uid,
+			'uid'      => $uid,
+			'username' => User::$last['username'],
 			'time'   => $time,
 			'name'   => $name,
 			'size'   => $img_upload['size'],
@@ -57,7 +84,10 @@ class Skin{
 			'url'    => '',
 			'star_count'    => 0,
 			'comment_count' => 0,
-			'view_count'    => 0
+			'view_count'    => 0,
+			'origin_id'  => 0,
+			'origin_uid' => $uid,
+			'origin_username' => User::$last['username']
 		];
 		DB::insert($data, 'res_skin');
 		$data['id'] = DB::id();
@@ -68,9 +98,11 @@ class Skin{
 		if(!move_uploaded_file($img_upload['tmp_name'], $file)){
 			return SKIN_UPLOAD_ERR_MVFILE;
 		}
-		$data['url']  = self::get_url_from_data($data);
+		$data['url'] = self::get_url_from_data($data);
+		$data['origin_id'] = $data['id'];
 		DB::update([
-			'url' => $data['url']
+			'url'       => $data['url'],
+			'origin_id' => $data['id'],
 		], 'res_skin', "`id`='{$data['id']}'");
 		return $data;
 	}
@@ -91,7 +123,57 @@ class Skin{
 		return $dir . $data['id'] . '.png';
 	}
 
+	public static function file_current(){
+		$dir = RUNTIME_DIR_DATA;
+		if(!file_exists($dir)){
+			mkdir($dir);
+		}
+		$dir .= 'skin/';
+		if(!file_exists($dir)){
+			mkdir($dir);
+		}
+		return $dir . urlencode(User::$last['username']) . '.png';
+	}
+
 	public static function get_url_from_data($data){
 		return WEBSITE_URL_DATA . 'skin_upload/' . date('Ymd', $data['time']) . '/' . $data['id'] . '.png';
+	}
+
+	public static function get($id){
+		$r = DB::assoc("SELECT * FROM `res_skin` WHERE `id`='$id'");
+		if(empty($r['id'])){
+			return false;
+		}
+		return $r;
+	}
+
+	public static function set_current($data){
+		$dst = self::file_current();
+		$src = self::get_file_from_data($data);
+		copy($src, $dst);
+		return DB::replace([
+			'uid'       => User::$last['id'],
+			'skin_id'   => $data['id'],
+			'time'      => time(),
+			'origin_id' => $data['origin_id']
+		], 'skin_current');
+	}
+
+	public static function get_current(){
+		$uid = User::$last['id'];
+		$r = DB::assoc("SELECT * FROM `skin_current` WHERE `uid`='$uid'");
+		if(empty($r['uid'])){
+			return false;
+		}
+		return self::get($r['skin_id']);
+	}
+
+	public static function reset_current(){
+		$uid = User::$last['id'];
+		$f = self::file_current();
+		if(file_exists($f)){
+			unlink($f);
+		}
+		return DB::query("DELETE FROM `skin_current` WHERE `uid`='$uid'");
 	}
 }

@@ -21,7 +21,8 @@ class TPL{
             'ext_css'     => array(),
             'plugin'      => array(),
             'frame'       => 'public/common',
-            'static_version' => STATIC_VERSION
+            'static_version' => STATIC_VERSION,
+            'powered_by'  => POWERED_BY
         );
 
                 

@@ -557,7 +557,7 @@ function SkinViewer(global, container) {
 		
 		skinc.clearRect(0, 0, 64, 32);
 		
-		skinc.drawImage(skin, 0, 0);
+		skinc.drawImage(skin, 0, 0, skin.width, skin.height, 0, 0, 64, 32);
 		
 		var imgdata = skinc.getImageData(0, 0, 64, 32);
 		var pixels = imgdata.data;
@@ -632,7 +632,7 @@ function SkinViewer(global, container) {
 		
 		capec.clearRect(0, 0, 64, 32);
 		
-		capec.drawImage(cape, 0, 0);
+		capec.drawImage(cape, 0, 0, cape.width, cape.height, 0, 0, 22, 17);
 		
 		capeMaterial.map.needsUpdate = true;
 		capemesh.visible = true;
@@ -669,6 +669,9 @@ function SkinViewer(global, container) {
 	var _vr = {
 		changeSkin : function(url){
 			skin.src = url;
+		},
+		changeCape: function (url) {
+			cape.src = url;
 		}
 	};
 

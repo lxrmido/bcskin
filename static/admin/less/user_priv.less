@@ -1,0 +1,58 @@
+@import "../../public/less/ui.var.less";
+
+.priv-k-holder{
+	width:40px;
+	height:40px;
+	line-height:40px;
+	color:#333;
+	font-size:@font-m;
+	text-align:left;
+	text-indent:8px;
+	overflow:hidden;	
+	float:left;
+	margin:8px;
+	
+}
+
+.priv-k-module,
+.priv-k-key,
+.priv-k-name,
+.priv-k-mpp{
+	width:200px;
+	height:56px;
+	border-right:@border-weak;
+	line-height:56px;
+	color:#333;
+	font-size:@font-m;
+	text-align:left;
+	text-indent:8px;
+	overflow:hidden;	
+	float:left;
+	margin:0 0;
+}
+.priv-k-module{
+	font-weight:bold;
+}
+.priv-k-mpp{
+	border-right:none;
+}
+.priv-k-module.hd,
+.priv-k-key.hd,
+.priv-k-name.hd{
+
+}
+
+.priv-list{
+	min-height:56px;
+}
+
+.priv-module,
+.priv-item{
+	width:100%;
+	height:56px;
+	border-top:@border-weak;
+	clear:both;
+	> .priv-k-holder{
+		
+	}
+}

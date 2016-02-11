@@ -11,7 +11,7 @@
 	function SkinPreview() {
 		var self = this;
 		var s = 1;
-		var skinImage = new Image();
+		var skinImage  = new Image();
 		var skinLoaded = false;
 		var capeloaded = false;
 		var capeEnabled = false;
@@ -104,6 +104,11 @@
 				skinImage.src = "https://skins.minecraft.net/MinecraftSkins/" +user+ ".png";
 			}
 			skinImage.onload = function(){
+				var skinMas = document.createElement('canvas');
+				skinMas.width  = 64;
+				skinMas.height = 32;
+				skinMas.getContext('2d').drawImage(skinImage, 0, 0, skinImage.width, skinImage.height, 0, 0, 64, 32);
+				skinImage = skinMas;
 				skinLoaded = true;
 				_ctx.scale(-1, 1);
 				_ctx.drawImage(skinImage, -64, 0);

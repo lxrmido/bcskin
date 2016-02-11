@@ -6,15 +6,15 @@
 define('TIME_ZONE', 'Asia/Shanghai');
 # MySQL服务器、用户名、密码
 define('SQL_SVR', 'localhost');    
-define('SQL_USR', '');        
-define('SQL_PWD', '');    
-define('SQL_DB', '');    
+define('SQL_USR', 'bcskin');        
+define('SQL_PWD', 'bcskin');    
+define('SQL_DB', 'bcskin');    
 define('DB_DEBUG', true);
 
-define('MD5_SALT', 'gnc_dev');
+define('MD5_SALT', 'bcskin');
 
-define('COOKIES_PREFIX', 'gnc_');
-define('SESSION_PREFIX', 'gnc_');
+define('COOKIES_PREFIX', 'bcs_');
+define('SESSION_PREFIX', 'bcs_');
 
 # 是否强制所有PHP类都只位于class目录下
 define('FORCE_AUTOLOAD', false);
@@ -31,16 +31,17 @@ define('RUNTIME_DIR_DATA', 'data/');
 # 找不到方法时指定默认处理方法
 define('RUNTIME_METHOD_NOTFOUND', RUNTIME_DIR_MODULE . 'public/method/notfound.php');
 
-define('WEBSITE_URL_ROOT',  'http://l/fw');
+define('WEBSITE_URL_ROOT',  'http://l/bcskin');
 define('WEBSITE_URL_DATA', WEBSITE_URL_ROOT . '/' . RUNTIME_DIR_DATA);
+define('POWERED_BY', 'Powered by bilicraft');
 
-define('COMPILE_LESS', false);
+define('COMPILE_LESS', true);
 define('MARVIN_DEBUG', false);
-define('STATIC_VERSION', '0826');
+define('STATIC_VERSION', '0210');
 #############################################
 
 # TPL
-define('TPL_DEFAULT_TITLE', '供稿中心');
+define('TPL_DEFAULT_TITLE', '碧玺皮肤');
 $TPL_DEFAULT_JS = array(
     
 );

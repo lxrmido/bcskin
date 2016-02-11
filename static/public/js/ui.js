@@ -1,3 +1,9 @@
+/**
+ * UI工具库
+ * Ver.20160211.for.bilicraft
+ * lxrmido@lxrmido.com
+ * License:Apache 2.0
+ */
 $(function(){
         
     

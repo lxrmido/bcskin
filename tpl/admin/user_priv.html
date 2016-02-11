@@ -1,0 +1,59 @@
+<div class="row x1">
+	<div class="button right with-icon blue" id="priv-edit">
+		<span>编辑</span>
+		<i class="icon-edit"></i>
+	</div>
+	<div class="button right with-icon blue" style="display:none;" id="priv-save">
+		<span>保存</span>
+		<i class="icon-save"></i>
+	</div>
+	<div class="button right with-icon margin-right" id="priv-refresh">
+		<i class="icon-refresh"></i>
+		<span>刷新</span>
+	</div>
+</div>
+
+<div class="row margin-top">
+	<div class="col all visi">
+		<div class="row x1">
+			<div class="priv-k-holder"></div>
+			<div class="priv-k-module hd">模块</div>
+			<div class="priv-k-key hd">页面</div>
+			<div class="priv-k-name hd">说明</div>
+			<div class="priv-k-mpp hd">权限标识</div>
+		</div>
+		<div class="row priv-list" id="action-list">
+			
+		</div>
+	</div>
+</div>
+
+<div class="row margin-top">
+	<div class="col all visi">
+		<div class="row x1">
+			<div class="priv-k-holder"></div>
+			<div class="priv-k-module hd">模块</div>
+			<div class="priv-k-key hd">操作</div>
+			<div class="priv-k-name hd">说明</div>
+		</div>
+		<div class="row priv-list" id="method-list">
+			
+		</div>
+	</div>
+</div>
+
+<div class="tpl" id="tpl">
+	<div class="priv-module" data-node="dwPrivModule">
+		<div class="priv-k-holder"></div>
+		<div class="priv-k-module" data-node="dwModule"></div>
+	</div>
+	<div class="priv-item" data-node="dwPrivItem">
+		<div class="priv-k-holder"></div>
+		<div class="priv-k-module" data-node="dwModule"></div>
+		<div class="priv-k-key" data-node="dwKey"></div>
+		<div class="priv-k-name name-show" data-node="dwName"></div>
+		<input class="input margin-left margin-right tdx2 slim name-edit" data-node="dwNameInput">
+		<div class="priv-k-mpp mpp-show" data-node="dwMpp"></div>
+		<input class="input margin-left tdx2 slim mpp-edit" data-node="dwMppInput">
+	</div>
+</div>

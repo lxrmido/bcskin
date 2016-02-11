@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title><{$title}></title>
+    <{include file="$static_tpl"}>
+    <style>
+        .header > .center{
+            width:1200px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var _RG = <{$_RG_JSON}>;
+        var _CF = <{$_CF_JSON}>;
+    </script>
+    <{include file="$header_tpl"}>
+    <div class="row x1">
+
+    </div>
+    <div class="page-section wd">
+        <div class="col x22pc left visi" id="left-menu">
+            <div class="row x1">
+                <div class="list-label">
+                    <i class="icon-cogs"></i>
+                    <span>系统</span>
+                </div>
+            </div>
+            <a class="list-item" href="./?c=admin">
+                <span>概述</span>
+            </a>
+            <div class="hor-split"></div>
+            <div class="row x1">
+                <div class="list-label">
+                    <i class="icon-user"></i>
+                    <span>用户</span>
+                </div>
+            </div>
+            <a class="list-item" href="./?c=admin&a=user_list">
+                <span>用户列表</span>
+            </a>
+            <a class="list-item" href="./?c=admin&a=user_group">
+                <span>用户组</span>
+            </a>
+            <a class="list-item" href="./?c=admin&a=user_priv">
+                <span>权限</span>
+            </a>
+            <div class="row x1">
+                <div class="list-label">
+                    <i class="icon-calendar"></i>
+                    <span>日志</span>
+                </div>
+            </div>
+            <a class="list-item" href="./?c=admin&a=syslog">
+                <span>调试及报错</span>
+            </a>
+        </div>
+        <div class="col x77pc right" id="mp-admin-right">
+            <!--  嵌入页面从此处开始  -->
+            <{include file="$tpl_name"}>
+            <!--  嵌入页面到此处结束  -->
+        </div>
+        <div class="col x77pc right">
+            <div class="row x1"></div>
+        </div>
+    </div>
+    <div class="row x1">
+        
+    </div>
+    <{section name=file loop=$tpl}>
+<!-- TPL <{$tpl[file]}> START -->
+        <{include file="<{$tpl_basic}><{$tpl[file]}>.html"}>
+<!-- TPL <{$tpl[file]}> ENDED -->
+    <{/section}>
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

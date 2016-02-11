@@ -16,7 +16,7 @@ class module_member{
             if(User::is_super()){
                 header('Location:./?c=skin');
             }else{
-                header('Location:./?c=akin');
+                header('Location:./?c=skin');
             }
         }else{
             $this->login();

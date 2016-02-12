@@ -26,6 +26,10 @@ class Skin{
 		}
 	}
 
+	public static function mall_list(){
+		return DB::all("SELECT `skin_current`.`uid`,`res_skin`.`username`,`res_skin`.`url` FROM `skin_current` LEFT JOIN `res_skin` ON `skin_current`.`skin_id`=`res_skin`.`id`");
+	}
+
 	public static function list_mine($offset, $limit){
 		$uid = User::$last['id'];
 		return DB::all("SELECT * FROM `res_skin` WHERE `uid`='$uid' ORDER BY `id` DESC LIMIT $offset, $limit");

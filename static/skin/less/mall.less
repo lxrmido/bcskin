@@ -1,0 +1,38 @@
+@import "../../public/less/ui.var.less";
+
+.mall-list{
+	width:980px;
+	height:auto;
+	min-height:1px;
+	overflow:hidden;
+	margin:32px auto 0 auto;
+	background-image:url(../img/monument.png);
+	background-size:196px 288px;
+	> .item{
+		width:98px * 2;
+		height:24px + 160px + 8px;
+		float:left;
+		margin:42px 0 54px 0;
+		> .name{
+			width:98px * 2;
+			height:24px;
+			line-height:24px;
+			text-align:center;
+			color:#e0e0e0;
+			text-shadow:1px 1px 1px rgba(0, 0, 0, .6);
+			font-size:15px;
+			clear:both;
+			margin:0 0 8px 0;
+			> span{
+				padding:4px 8px;
+				background-color:rgba(0, 0, 0, .3);
+				border-radius:5px;
+			}
+		}
+		> .player{
+			width:80px;
+			height:160px;
+			margin:0 auto 0 auto;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title><{$title}></title>
+    <{include file="$static_tpl"}>
+</head>
+<body>
+    <script>
+        var _RG = <{$_RG_JSON}>;
+        var _CF = <{$_CF_JSON}>;
+    </script>
+    <div class="skin-navi">
+        <a href="http://bbs.bilicraft.io" class="navi">论坛</a>
+        <a href="http://mc.bilicraft.io:8123/" class="navi">大地图</a>
+        <a href="./?c=skin&a=mall" class="navi">陈列室</a>
+        <a href="./?c=skin" class="navi">衣橱</a>
+    </div>
+    <{include file="$header_tpl"}>
+    <!--  嵌入页面从此处开始  -->
+    <{include file="$tpl_name"}>
+    <!--  嵌入页面到此处结束  -->
+    <{section name=file loop=$tpl}>
+        <!-- TPL -->
+        <{include file="<{$tpl_basic}><{$tpl[file]}>.html"}>
+    <{/section}>
+    <div class="row x2">
+        
+    </div>
+    <div class="public-footer">
+        <div class="center">
+            <{$powered_by}>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

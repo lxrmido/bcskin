@@ -13,4 +13,10 @@ class module_skin{
 		]);
 	}
 
+	public function mall(){
+		TPL::show('skin/mall', [
+			'mall_list_json' => json_encode(Skin::mall_list())
+		]);
+	}
+
 }

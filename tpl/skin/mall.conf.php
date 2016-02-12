@@ -1,6 +1,6 @@
 <?php
 
-class config_tpl_skin_main{
+class config_tpl_skin_mall{
     
     function get_config(){
         // 继承配置
@@ -10,18 +10,16 @@ class config_tpl_skin_main{
                 
             ],
             'less' => [
-                'skin/less/main'
+                'skin/less/mall'
             ],
             'js'  => [
-                'skin/js/three.min',
-                'skin/js/viewer',
                 'skin/js/sv2d',
-                'skin/js/main'
+                'skin/js/mall'
             ],
             'navi' => [
                 [
-                    '衣橱',
-                    './?c=skin'
+                    '陈列室',
+                    './?c=skin&a=mall'
                 ]
             ]
         ));

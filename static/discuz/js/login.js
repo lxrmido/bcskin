@@ -8,6 +8,33 @@ $(function(){
 	var viewNoRegister = ui('#view-no-register').hide();
 
 	var errorSignTips = ui('#error-sign-tips');
+	var iptAccount  = ui('#ipt-account');
+	var iptPassword = ui('#ipt-password');
+
+	var btnRegister = ui('#btn-register', {
+		click : function(){
+			var username = iptAccount.val();
+			var password = iptPassword.val();
+			if(!username.length){
+				error('请输入游戏ID');
+				return;
+			}
+			if(!password.length){
+				error('请输入密码');
+				return;
+			}
+			G.method('discuz.register', {
+				dz_uid : window.discuz_auth.uid,
+				auth   : window.discuz_auth.autj,
+				username : username,
+				password : MD5(password)
+			}, function(c, d){
+				document.location.href = './?c=member&a=logined&k=1';
+			}, function(c, m){
+				error(m);				
+			});
+		}
+	});
 
 
 	window.discuz_login = function(r){
@@ -20,6 +47,7 @@ $(function(){
 				if(d.uid && d.uid > 0){
 					document.location.href = './?c=member&a=logined&k=1';
 				}else{
+					window.discuz_auth = d;
 					viewNoRegister.show();
 				}
 			}, function(c, m){

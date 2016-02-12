@@ -92,6 +92,10 @@ $(function(){
         }
     });
 
+    var sv = ui('#skin-viewer');
+    sv.viewer = SkinViewer(window, sv.element);
+    sv.viewer.changeSkin(C.defaultSkin());
+
     
     function login(){
         if(

@@ -1,0 +1,61 @@
+<script>
+	var bcs_url = '<{$bcs_url}>';
+</script>
+
+<div class="col visi center-tips">
+	<div class="col in">
+		<div class="tab-bar">
+			<div class="tab selected">
+				通过论坛登陆
+			</div>
+		</div>		
+		<div class="row x1">
+			<div class="label free">
+				正在获取论坛登陆状态……
+			</div>
+		</div>
+		<div class="view" id="view-logined" style="display:none;">
+			<div class="row x1">
+				<div class="label free">
+					<span>已取得论坛登陆信息，正在尝试登入站点……</span>
+				</div>
+			</div>
+		</div>
+		<div class="view" id="view-no-login" style="display:none;">
+			<div class="row x1">
+				<div class="label free">
+					<span>当前用户尚未登陆论坛，请先前往论坛登陆</span>
+				</div>
+			</div>
+		</div>
+		<div class="view" id="view-no-register" style="display:none;">
+			<div class="row x1">
+				<div class="label free">
+					用户尚未设置游戏ID，请设置：
+				</div>
+			</div>
+			<div class="row x1">
+				<div class="label margin-left">
+					游戏ID：
+				</div>
+				<input type="text" class="input x2 slim margin-left" id="ipt-account">
+			</div>
+			<div class="row x1">
+				<div class="label margin-left">
+					设置密码：
+				</div>
+				<input type="password" class="input x2 slim margin-left" id="ipt-password">
+				<div class="bc-button margin-left" id="btn-register">
+					<span>下一步</span>
+				</div>
+			</div>
+		</div>
+		<div class="view" id="view-error" style="display:none;">
+			<div class="row x1">
+				<div class="label free">
+					<span id="error-sign-tips"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

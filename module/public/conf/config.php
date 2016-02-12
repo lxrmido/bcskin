@@ -4,6 +4,11 @@
  */
 #############################################
 define('TIME_ZONE', 'Asia/Shanghai');
+define('ALLOW_REGISTER', true);
+define('WEBSITE_URL_ROOT',  'http://l/bcskin');
+define('POWERED_BY', 'Powered by bilicraft');
+define('DISCUZ_BCS_LOGIN_KEY', 'bcskin');
+define('DISCUZ_BCS_URL', 'http://bbs.bilicraft.io/bcs.php');
 # MySQL服务器、用户名、密码
 define('SQL_SVR', 'localhost');    
 define('SQL_USR', 'bcskin');        
@@ -30,11 +35,7 @@ define('RUNTIME_DIR_STATIC', 'static/');
 define('RUNTIME_DIR_DATA', 'data/');
 # 找不到方法时指定默认处理方法
 define('RUNTIME_METHOD_NOTFOUND', RUNTIME_DIR_MODULE . 'public/method/notfound.php');
-
-define('WEBSITE_URL_ROOT',  'http://l/bcskin');
 define('WEBSITE_URL_DATA', WEBSITE_URL_ROOT . '/' . RUNTIME_DIR_DATA);
-define('POWERED_BY', 'Powered by bilicraft');
-
 define('COMPILE_LESS', true);
 define('MARVIN_DEBUG', false);
 define('STATIC_VERSION', '0210');

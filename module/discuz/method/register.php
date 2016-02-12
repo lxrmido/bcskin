@@ -1,23 +1,25 @@
 <?php
-$code     = IO::I('code');
+
+$dz_uid  = IO::I('dz_uid', null, 'uint');
+$auth = IO::I('auth', null, 'uint');
+
 $username = IO::I('username');
-$email    = IO::I('email');
 $password = IO::I('password');
 
-if(!ALLOW_REGISTER){
-    IO::E('抱歉，目前不允许注册');
+$r = DZLogin::get($uid);
+
+if(!$r){
+	IO::E('注册失败，请重试');
 }
 
-
-import('vericode');
-if(!SimpleCode::check_code($code)){
-    IO::E(-1, '验证码不正确！');
+if($r['auth'] != $auth){
+	IO::E('验证信息已过期，请重试');
 }
 
 $time = time();
 $data = array(
     'username'   => $username,
-    'email'      => $email,
+    'email'      => $username . '@fa.ke',
     'password'   => $password,
     'regdate'    => $time,
     'lastlogin'  => $time,
@@ -28,21 +30,20 @@ $data = array(
 
 switch(User::check_insert($data)){
     case CODE_USERNAME_USED:
-        IO::E(CODE_USERNAME_USED, '此用户名已被使用');
+        IO::E('此用户名已被使用');
         break;
     case CODE_EMAIL_USED:
-        IO::E(CODE_EMAIL_USED, '此邮箱已被使用');
+        IO::E('此邮箱已被使用');
         break;
     default:
         $data['salt'] = User::make_salt();
         $data['password'] = User::make_pass($data['password'], $data['salt']);
         if(User::insert($data)){
-            SimpleCode::flush_code();
             $u = User::check_login($username, $password);
-            User::set_login($u, false);
+            User::set_login($u, true);
             IO::O();
         }else{
-            IO::E(-1, '注册出错，请稍后重试');
+            IO::E('注册出错，请稍后重试');
         }
         break;
 }

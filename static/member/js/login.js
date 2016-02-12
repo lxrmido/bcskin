@@ -47,6 +47,11 @@ $(function(){
             login();
         }
     });
+    var loginDiscuz = ui('#login-discuz', {
+        click : function(){
+            document.location.href = './?c=discuz&a=login';
+        }
+    });
     
     
     var rgAccount = ui('#register-account', {

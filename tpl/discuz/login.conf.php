@@ -1,6 +1,6 @@
 <?php
 
-class config_tpl_skin_main{
+class config_tpl_discuz_login{
     
     function get_config(){
         // 继承配置
@@ -10,13 +10,11 @@ class config_tpl_skin_main{
                 
             ),
             'less' => array(
-                'skin/less/main'
+                'discuz/less/login'
             ),
             'js'  => array(
-                'skin/js/three.min',
-                'skin/js/viewer',
-                'skin/js/sv2d',
-                'skin/js/main'
+                'public/js/md5',
+                'discuz/js/login'
             )
         ));
     }

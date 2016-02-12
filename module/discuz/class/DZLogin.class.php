@@ -22,9 +22,27 @@ class DZLogin{
 			DB::update([
 				'auth'        => $auth,
 				'time'        => time()
-			], 'discuz_login');
+			], 'discuz_login', "`dz_uid`='$dz_uid'");
 		}
 		return $auth;
+	}
+
+	public static function reg($dz_uid, $u){
+		$auth = rand(11111111, 99999999);
+		DB::update([
+			'uid'         => $u['id'],
+			'username'    => $u['username'],
+			'auth'        => $auth,
+			'time'        => time()
+		], 'discuz_login', "`dz_uid`='$dz_uid'");
+	}
+
+	public static function get($dz_uid){
+		$r = DB::assoc("SELECT * FROM `discuz_login` WHERE `dz_uid`='$dz_uid'");
+		if(!$r){
+			return false;
+		}
+		return $r;
 	}
 
 }

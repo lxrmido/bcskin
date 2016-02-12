@@ -9,10 +9,6 @@ $(function(){
 
 	var errorSignTips = ui('#error-sign-tips');
 
-	var sn  = document.createElement('script');
-	sn.type = 'text/javascript';
-	sn.src  = bcs_url;
-	$('head').append(sn);
 
 	window.discuz_login = function(r){
 		if(r.uid && r.uid > 0){
@@ -33,6 +29,11 @@ $(function(){
 			viewNoLogin.show();
 		}
 	};
+
+	var sn  = document.createElement('script');
+	sn.type = 'text/javascript';
+	sn.src  = bcs_url;
+	$('head').append(sn);
 
 	function error(m){
 		viewError.show();

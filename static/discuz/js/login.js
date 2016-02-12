@@ -25,7 +25,7 @@ $(function(){
 			}
 			G.method('discuz.register', {
 				dz_uid : window.discuz_auth.uid,
-				auth   : window.discuz_auth.autj,
+				auth   : window.discuz_auth.auth,
 				username : username,
 				password : MD5(password)
 			}, function(c, d){

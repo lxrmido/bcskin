@@ -4,3 +4,4 @@ data/skin/*
 data/skin_upload/*
 data/cape/*
 data/cape_upload/*
+module/public/conf/config.php

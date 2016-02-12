@@ -6,7 +6,7 @@ $auth = IO::I('auth', null, 'uint');
 $username = IO::I('username');
 $password = IO::I('password');
 
-$r = DZLogin::get($uid);
+$r = DZLogin::get($dz_uid);
 
 if(!$r){
 	IO::E('注册失败，请重试');

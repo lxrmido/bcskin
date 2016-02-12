@@ -47,7 +47,7 @@ $(function(){
 				if(d.uid && d.uid > 0){
 					document.location.href = './?c=member&a=logined&k=1';
 				}else{
-					window.discuz_auth = d;
+					window.discuz_auth = r;
 					viewNoRegister.show();
 				}
 			}, function(c, m){

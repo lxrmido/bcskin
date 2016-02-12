@@ -118,3 +118,5 @@ ALTER TABLE `res_skin` ADD `origin_id` INT(11) NOT NULL , ADD `origin_uid` INT(1
 CREATE TABLE `res_cape` LIKE `res_skin`;
 CREATE TABLE `skin_current` ( `uid` INT(11) UNSIGNED NOT NULL , `skin_id` INT(11) UNSIGNED NOT NULL , `time` INT(11) UNSIGNED NOT NULL , `origin_id` INT(11) UNSIGNED NOT NULL , PRIMARY KEY (`uid`) , INDEX (`skin_id`) , INDEX (`origin_id`) ) ENGINE = InnoDB;
 CREATE TABLE `cape_current` ( `uid` INT(11) UNSIGNED NOT NULL , `cape_id` INT(11) UNSIGNED NOT NULL , `time` INT(11) UNSIGNED NOT NULL , `origin_id` INT(11) UNSIGNED NOT NULL , PRIMARY KEY (`uid`) , INDEX (`cape_id`) , INDEX (`origin_id`) ) ENGINE = InnoDB;
+CREATE TABLE `discuz_login` ( `dz_uid` INT(11) UNSIGNED NOT NULL , `dz_username` VARCHAR(100) NOT NULL , `uid` INT(11) UNSIGNED NOT NULL , `username` VARCHAR(100) NOT NULL , `auth` INT(11) UNSIGNED NOT NULL , PRIMARY KEY (`dz_uid`) ) ENGINE = InnoDB;
+ALTER TABLE `discuz_login` ADD `time` INT(11) UNSIGNED NOT NULL ;

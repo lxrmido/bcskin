@@ -42,7 +42,7 @@ define('STATIC_VERSION', '0210');
 #############################################
 
 # TPL
-define('TPL_DEFAULT_TITLE', '碧玺皮肤');
+define('TPL_DEFAULT_TITLE', '碧玺');
 $TPL_DEFAULT_JS = array(
     
 );

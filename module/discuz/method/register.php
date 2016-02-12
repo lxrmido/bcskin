@@ -41,6 +41,7 @@ switch(User::check_insert($data)){
         if(User::insert($data)){
             $u = User::check_login($username, $password);
             User::set_login($u, true);
+            DZLogin::reg($dz_uid, $u);
             IO::O();
         }else{
             IO::E('注册出错，请稍后重试');

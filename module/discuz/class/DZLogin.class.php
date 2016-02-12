@@ -29,7 +29,7 @@ class DZLogin{
 
 	public static function reg($dz_uid, $u){
 		$auth = rand(11111111, 99999999);
-		DB::update([
+		return DB::update([
 			'uid'         => $u['id'],
 			'username'    => $u['username'],
 			'auth'        => $auth,

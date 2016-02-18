@@ -12,9 +12,9 @@ $(function(){
 	}
 	sv.reloadSkin = function(data){
 		data = data || {
-			name : '未设置',
+			name : '未在本站设置',
 			origin_username : false,
-			url : C.defaultSkin()
+			url : C.modURL('skin', 'char')
 		};
 		sv.viewer.changeSkin(data.url);
 		currentSkinFront.$.empty().renderSkin2d({
@@ -30,7 +30,7 @@ $(function(){
 		if(data.origin_username == _RG.user.username){
 			currentSkinOrigin.$.html('自行上传');
 		}else if(!data.origin_username){
-			currentSkinOrigin.$.html('并没有');
+			currentSkinOrigin.$.html('Minecraft官方服务器');
 		}else{
 			currentSkinOrigin.$.html(data.origin_username + '分享');
 		}

@@ -10,13 +10,11 @@ class module_skin{
 
 		$r = Net::get_with_header($url);
 
-		if($r['content'] == '404 Not Found'){
+		if(empty($r['header']['Location'])){
 			header('Location:' . WEBSITE_URL_ROOT . '/static/skin/img/char.png');
 		}else{
-			if(!empty($r['header']['Location'])){
-				header('Content-Type: image/png');
-				echo Net::get($r['header']['Location']);
-			}
+			header('Content-Type: image/png');
+			echo Net::get($r['header']['Location']);
 		}
 	}
 

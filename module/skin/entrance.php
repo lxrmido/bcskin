@@ -9,12 +9,12 @@ class module_skin{
 		$url = 'http://skins.minecraft.net/MinecraftSkins/' . User::$last['username'] . '.png';
 		$default = WEBSITE_URL_ROOT . '/static/skin/img/char.png';
 		if(!function_exists('curl_init')){
-			header('Location:' $default);
+			header('Location:' . $default);
 			return;
 		}
 		$r = Net::get_with_header($url);
 		if(empty($r['header']['Location'])){
-			header('Location:' $default);
+			header('Location:' . $default);
 		}else{
 			header('Content-Type: image/png');
 			echo Net::get($r['header']['Location']);

@@ -127,7 +127,10 @@ class Skin{
 		return $dir . $data['id'] . '.png';
 	}
 
-	public static function file_current(){
+	public static function file_current($player = false){
+		if(!$player){
+			$player = User::$last['username'];
+		}
 		$dir = RUNTIME_DIR_DATA;
 		if(!file_exists($dir)){
 			mkdir($dir);
@@ -136,7 +139,7 @@ class Skin{
 		if(!file_exists($dir)){
 			mkdir($dir);
 		}
-		return $dir . urlencode(User::$last['username']) . '.png';
+		return $dir . urlencode($player) . '.png';
 	}
 
 	public static function get_url_from_data($data){
@@ -155,6 +158,8 @@ class Skin{
 		$dst = self::file_current();
 		$src = self::get_file_from_data($data);
 		copy($src, $dst);
+		import('texture', false);
+		Texture::update_uni(User::$last['username']);
 		return DB::replace([
 			'uid'       => User::$last['id'],
 			'skin_id'   => $data['id'],

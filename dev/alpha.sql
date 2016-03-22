@@ -107,8 +107,9 @@ ALTER TABLE `user_group`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',AUTO_INCREMENT=1;
 
 INSERT INTO `user_group` (`id`, `name`, `char_list`, `parent`) VALUES
-(1, '管理员', NULL, 0),
-(2, '普通用户', NULL, 0);
+(1, '黑幕', NULL, 0),
+(2, '玩家', NULL, 0),
+(2, '不明物体', NULL, 0);
 
 -- ADDED
 

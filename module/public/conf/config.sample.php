@@ -4,8 +4,9 @@
  */
 #############################################
 define('TIME_ZONE', 'Asia/Shanghai');
+# 是否开放注册
 define('ALLOW_REGISTER', true);
-define('WEBSITE_URL_ROOT',  'http://l/bcskin');
+define('WEBSITE_URL_ROOT',  'http://bbs.bilicraft.io/s/');
 define('POWERED_BY', 'Powered by bilicraft');
 define('DISCUZ_BCS_LOGIN_KEY', 'bcskin');
 define('DISCUZ_BCS_URL', 'http://bbs.bilicraft.io/bcs.php');

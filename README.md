@@ -4,7 +4,9 @@
 
 ![Bilicraft](http://bbs.bilicraft.io/s/static/public/img/title.png)
 
-这是一个minecraft第三方服务器的皮肤资源管理系统，以及
+这是一个minecraft第三方服务器的皮肤资源管理系统
+
+本项目不包含皮肤MOD，请自行下载UniSkinMod等皮肤MOD
 
 随着碧玺六周目的华丽开启，皮肤站也迎来了重建
 
